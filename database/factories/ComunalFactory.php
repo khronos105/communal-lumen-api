@@ -22,8 +22,8 @@ class ComunalFactory extends Factory
     public function definition()
     {
         return [
-            'image' => $this->faker->date(),
-            'date'  => $this->faker->imageUrl(360, 360, 'animals', true, 'cats')
+            'image' => $this->faker->imageUrl(360, 360, 'animals', true, 'cats'),
+            'date'  => $this->faker->date()
         ];
     }
 }
