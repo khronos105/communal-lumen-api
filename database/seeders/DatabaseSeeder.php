@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+use App\Models\Comunal;
+use App\Models\Doc;
+use App\Models\Invoice;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        Comunal::factory()->has(
+            Invoice::factory()->has(
+                Doc::factory()
+            )->count(3)
+        )->count(10)->create();
     }
 }
