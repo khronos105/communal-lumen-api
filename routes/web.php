@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/comunals', 'ComunalController@index');
+$router->post('/comunals', 'ComunalController@store');
+$router->get('/comunals/{comunal}', 'ComunalController@show');
+$router->put('/comunals/{comunal}', 'ComunalController@update');
+$router->patch('/comunals/{comunal}', 'ComunalController@update');
+$router->delete('/comunals/{comunal}', 'ComunalController@destroy');
