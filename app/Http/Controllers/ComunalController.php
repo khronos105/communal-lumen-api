@@ -38,7 +38,7 @@ class ComunalController extends Controller
     }
 
     public function show($comunal){
-        $comunal = Comunal::findOrFail($comunal);
+        $comunal = Comunal::with('invoices')->findOrFail($comunal);
 
         return $this->successResponse($comunal);
     }

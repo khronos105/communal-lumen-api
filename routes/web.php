@@ -19,3 +19,6 @@ $router->get('/comunals/{comunal}', 'ComunalController@show');
 $router->put('/comunals/{comunal}', 'ComunalController@update');
 $router->patch('/comunals/{comunal}', 'ComunalController@update');
 $router->delete('/comunals/{comunal}', 'ComunalController@destroy');
+
+
+$router->get('/invoices/{invoice}', 'InvoiceController@show');
