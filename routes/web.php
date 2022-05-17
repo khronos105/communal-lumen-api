@@ -13,6 +13,7 @@
 |
 */
 
+
 $router->get('/comunals', 'ComunalController@index');
 $router->post('/comunals', 'ComunalController@store');
 $router->get('/comunals/{comunal}', 'ComunalController@show');
@@ -21,4 +22,7 @@ $router->patch('/comunals/{comunal}', 'ComunalController@update');
 $router->delete('/comunals/{comunal}', 'ComunalController@destroy');
 
 
+$router->get('/invoices', 'InvoiceController@index');
 $router->get('/invoices/{invoice}', 'InvoiceController@show');
+
+$router->get('/docs/{doc}', 'DocController@show');

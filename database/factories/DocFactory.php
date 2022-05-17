@@ -23,7 +23,7 @@ class DocFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'url'   => $this->faker->imageUrl(360, 360, 'animals', true, 'cats')
+            'url'   => '/invoices_uploads/INVOICE-1652735339.pdf'
         ];
     }
 }

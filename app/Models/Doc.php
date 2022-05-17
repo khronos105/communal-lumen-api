@@ -12,4 +12,8 @@ class Doc extends Model
         'title',
         'url'
     ];
+
+    public function getUrlAttribute($value){
+        return env('APP_URL') . $value;
+    }
 }

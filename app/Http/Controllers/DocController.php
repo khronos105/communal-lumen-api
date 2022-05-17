@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
+use App\Models\Doc;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
 
-class InvoiceController extends Controller
+class DocController extends Controller
 {
     use ApiResponser;
 
@@ -23,22 +23,21 @@ class InvoiceController extends Controller
     }
 
     public function index(){
-        return $this->successResponse(Invoice::TITLES);
     }
 
     public function store(Request $request){
     }
 
-    public function show($invoice){
-        $invoice = Invoice::with('docs')->findOrFail($invoice);
+    public function show($doc){
+        $doc = Doc::findOrFail($doc);
 
-        return $this->successResponse($invoice);
+        return $this->successResponse($doc);
     }
 
-    public function update(Request $request, $invoice){
+    public function update(Request $request, $doc){
         // TODO
     }
 
-    public function destroy($invoice){
+    public function destroy($doc){
     }
 }
