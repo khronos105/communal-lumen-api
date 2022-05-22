@@ -42,7 +42,9 @@ class ComunalController extends Controller
 
         $this->uploadImage($comunal, $request);
         
-        return $this->successResponse(11, Response::HTTP_CREATED);
+        $comunal = Comunal::with('invoices')->findOrFail($comunal->id);
+
+        return $this->successResponse($comunal, Response::HTTP_CREATED);
     }
 
     public function show($comunal){
